@@ -1,6 +1,6 @@
-# Restaurant Inventory Managment ("Dejango Delights")
+# Restaurant Inventory Managment ("Django Delights")
 
-Dejango Delights is a full-stack web application built with Django for managing a restaurant’s menu, ingredients, inventory, and sales. Designed as a portfolio project, it demonstrates a practical use of Django’s powerful MVC (Model-View-Controller) framework to build a dynamic and data-driven inventory management system.
+Django Delights is a full-stack web application built with Django for managing a restaurant’s menu, ingredients, inventory, and sales. Designed as a portfolio project, it demonstrates a practical use of Django’s powerful MVC (Model-View-Controller) framework to build a dynamic and data-driven inventory management system.
 
 
 ---
