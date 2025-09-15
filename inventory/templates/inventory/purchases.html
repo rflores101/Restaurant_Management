@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "inventory/base.html" %}
+{% load static %}
+
+{% block head %}
+<h1>Purchase Log</h1>
+{% endblock %}
+
+{% block body %}
+<p><a href="{% url 'purchasecreate' %}">New Purchase</a></p>
+<p></p>
+<table>
+    <tr>
+        <th>Menu Item</th>
+        <th>Purchase Date</th>
+    </tr>
+    {% for purchase in purchases %}
+    <tr>
+        <td>{{ purchase.menu_item }}</td>
+        <td>{{ purchase.timestamp }}</td>
+        <td><a href="{% url 'purchasedelete' purchase.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

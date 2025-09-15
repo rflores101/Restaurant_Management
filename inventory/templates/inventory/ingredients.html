@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "inventory/base.html" %}
+{% load static %}
+
+{% block head %}
+<h1>Current Inventory</h1>
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'ingredientcreate' %}">Add an Ingredient</a>
+<p></p>
+<table>
+    <tr>
+        <th>Ingredient</th>
+        <th>Quantity</th>
+        <th>Unit</th>
+        <th>Unit Price</th>
+    </tr>
+    <tr>
+        {% for ingredient in ingredients %}
+        <tr>
+            <td>{{ ingredient.name }}</td>
+            <td>{{ ingredient.quantity }}</td>
+            <td>{{ ingredient.unit }}</td>
+            <td>{{ ingredient.unit_price }}</td>
+            <td><a href="{% url 'ingredientupdate' ingredient.id%}">Update</a></p></td>
+            <td><a href="{% url 'ingredientdelete' ingredient.id%}">Remove</a></p></td>
+        </tr>
+        {% endfor %}
+    </tr>
+</table>
+
+{% endblock %}

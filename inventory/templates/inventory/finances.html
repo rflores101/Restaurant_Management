@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "inventory/base.html" %}
+{% load static %}
+
+{% block head %}
+<h1>DjangoDelights Finances</h1>
+
+{% endblock %}
+
+{% block body %}
+<p>Revenue ($): {{ revenue }}</p>
+<p>Profit ($): {{ profit }}</p>
+
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "inventory/base.html" %}
+{% load static %}
+
+{% block head %}
+<h1>Recipe Requirements</h1>
+{% endblock %}
+
+{% block body %}
+<a href="{% url 'reciperequirementcreate' %}">Add a Recipe Requirement</a>
+<p></p>
+<table>
+    <tr>
+        <th>Ingredient</th>
+        <th>Quantity</th>
+        <th>Units</th>
+    </tr>
+    <tr>
+        {% for requirement in requirements %}
+        <tr>
+            <td>{{ requirement.ingredient }}</td>
+            <td>{{ requirement.quantity }}</td>
+            <td>{{ requirement.ingredient.unit }}</td>
+            <td><a href="{% url 'reciperequirementupdate' requirement.id %}">Update</a></td>
+            <td><a href="{% url 'reciperequirementdelete' requirement.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tr>
+</table>
+
+{% endblock %}
